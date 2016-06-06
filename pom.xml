@@ -14,15 +14,15 @@
       <junit.version>4.11</junit.version>
       <logback.version>1.0.13</logback.version>
       <jcl-over-slf4j.version>1.7.5</jcl-over-slf4j.version>
+      <hibernate.version>4.1.4.Final</hibernate.version>
+      <mysql.connector.version>5.1.21</mysql.connector.version>
+      <hibernate-jpa-2.0-api.version>1.0.0.Final</hibernate-jpa-2.0-api.version>
+      <org.springframework.data.version>1.6.0.RELEASE</org.springframework.data.version>
+      <spring.data.mongo.version>1.5.0.RELEASE</spring.data.mongo.version>
+      <tomcat-jdbc.version>7.0.32</tomcat-jdbc.version>
+      <lombok.version>1.12.6</lombok.version>
   </properties>
   <dependencies>
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>${junit.version}</version>
-      </dependency>
-
-      <!-- Spring Core -->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-core</artifactId>
@@ -33,6 +33,92 @@
                   <artifactId>commons-logging</artifactId>
               </exclusion>
           </exclusions>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-web</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-webmvc</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>${mysql.connector.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-jdbc</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.hibernate.javax.persistence</groupId>
+          <artifactId>hibernate-jpa-2.0-api</artifactId>
+          <version>${hibernate-jpa-2.0-api.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-entitymanager</artifactId>
+          <version>${hibernate.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-orm</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework.data</groupId>
+          <artifactId>spring-data-jpa</artifactId>
+          <version>${org.springframework.data.version}</version>
+          <exclusions>
+              <exclusion>
+                  <artifactId>slf4j-api</artifactId>
+                  <groupId>org.slf4j</groupId>
+              </exclusion>
+              <exclusion>
+                  <artifactId>spring-data-java8-stub</artifactId>
+                  <groupId>org.springframework.data.build</groupId>
+              </exclusion>
+              <exclusion>
+                  <artifactId>spring-data-commons-core</artifactId>
+                  <groupId>org.springframework.data</groupId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework.data</groupId>
+          <artifactId>spring-data-mongodb</artifactId>
+          <version>${spring.data.mongo.version}</version>
+          <exclusions>
+              <exclusion>
+                  <artifactId>slf4j-api</artifactId>
+                  <groupId>org.slf4j</groupId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+
+      <dependency>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>tomcat-jdbc</artifactId>
+          <version>${tomcat-jdbc.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>${lombok.version}</version>
       </dependency>
 
       <dependency>
@@ -48,18 +134,11 @@
       </dependency>
 
       <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-web</artifactId>
-          <version>${spring.version}</version>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>${junit.version}</version>
       </dependency>
 
-      <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-webmvc</artifactId>
-          <version>${spring.version}</version>
-      </dependency>
-
-      <!-- jstl -->
       <dependency>
           <groupId>jstl</groupId>
           <artifactId>jstl</artifactId>
