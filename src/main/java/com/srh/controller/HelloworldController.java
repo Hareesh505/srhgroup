@@ -1,6 +1,8 @@
 package com.srh.controller;
 
 import com.srh.model.Employee;
+import com.srh.model.Person;
+import com.srh.mongo.repositories.PersonRepository;
 import com.srh.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +26,9 @@ public class HelloworldController {
     @Autowired
     EmployeeRepository employeeRepository;
 
+    @Autowired
+    PersonRepository personRepository;
+
     private static final String VIEW_INDEX = "index";
     private static final String VIEW_SUCCESS = "success";
 
@@ -38,15 +43,18 @@ public class HelloworldController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public ModelAndView welcomeName(@RequestParam("empName") String empName,
-                                    @RequestParam("empState") String empState) {
+                                    @RequestParam("empState") String empState,
+                                    @RequestParam("empBG") String empBG) {
 
         Employee employee = new Employee(empName,empState);
+        Person person = new Person(empName,empBG);
         employeeRepository.save(employee);
-
+        personRepository.save(person);
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("empName",employee.getEmpName());
         model.put("empState",employee.getEmpState());
         model.put("empId",employee.getId());
+        model.put("empBg",person.getPersonBloodGroup());
         return new ModelAndView(VIEW_SUCCESS,model);
 
     }

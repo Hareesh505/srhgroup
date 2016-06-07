@@ -1,8 +1,8 @@
 <html>
 <body>
-    <h1>success</h1><br/>
     <h1>Hi ${empName}</h1><br/>
-    <h1>${empState}</h1><br/>
-    <h1>${empId}</h1>
+    <p>Your empId: ${empId}</p><br/>
+    <p>Your BG: ${empBg}</p><br/>
+    <p>You Belong To: ${empState}</p>
 </body>
 </html>
