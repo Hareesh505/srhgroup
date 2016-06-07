@@ -21,7 +21,7 @@ import java.util.Map;
 
 
 @Controller
-public class HelloworldController {
+public class AppController {
 
     @Autowired
     EmployeeRepository employeeRepository;
@@ -33,16 +33,12 @@ public class HelloworldController {
     private static final String VIEW_SUCCESS = "success";
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String welcome(ModelMap model) {
-
-        model.addAttribute("message", "Welcome");
-        // Spring uses InternalResourceViewResolver and return back index.jsp
+    public String welcomeView() {
         return VIEW_INDEX;
-
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public ModelAndView welcomeName(@RequestParam("empName") String empName,
+    public ModelAndView successView(@RequestParam("empName") String empName,
                                     @RequestParam("empState") String empState,
                                     @RequestParam("empBG") String empBG) {
 

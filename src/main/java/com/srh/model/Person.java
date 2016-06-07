@@ -5,7 +5,6 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -29,7 +28,6 @@ public class Person {
     public Person(String personName,String personBloodGroup){
         this.personName = personName;
         this.personBloodGroup = personBloodGroup;
-
     }
 
 }

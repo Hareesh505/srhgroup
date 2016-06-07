@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>Employee</h1><br/>
+    <h1>Employee Registration</h1><br/>
     <form action="/" method="POST">
         Employee Name: <input type="text" name="empName" id="empName"><br/>
         Employee BG: <input type="text" name="empBG" id="empBG"><br/>
